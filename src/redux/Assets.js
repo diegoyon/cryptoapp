@@ -8,7 +8,6 @@ export const fetchAssets = createAsyncThunk(
   'assets/fetchAssets',
   async () => {
     const response = await axios.get(ASSETS_URL);
-    // console.log(response.data.data);
     return response.data.data;
   },
 );

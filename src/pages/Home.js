@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Asset from '../components/Asset';
 import './Home.css';
 
@@ -13,17 +14,23 @@ function Home() {
   }
   if (status === 'succeeded') {
     content = assets.map((asset) => (
-      <Asset
-        key={asset.id}
-        symbol={asset.symbol}
-        name={asset.name}
-        priceUsd={asset.priceUsd}
-      />
+      <Link key={asset.id} to={`/${asset.id}`}>
+        <Asset
+          symbol={asset.symbol}
+          name={asset.name}
+          priceUsd={asset.priceUsd}
+        />
+      </Link>
     ));
   }
 
   return (
-    <div className="asset-list">{content}</div>
+    <>
+      <header>
+        <h1>top rated</h1>
+      </header>
+      <div className="asset-list">{content}</div>
+    </>
   );
 }
 
