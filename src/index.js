@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/configureStore';
 import { fetchAssets } from './redux/Assets';
+
 store.dispatch(fetchAssets());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

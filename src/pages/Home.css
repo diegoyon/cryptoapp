@@ -1,0 +1,40 @@
+.asset-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid blue; */
+  justify-content: center;
+  /* gap: 10px; */
+}
+
+
+
+.asset-list>div:nth-child(4n-1), .asset-list>div:nth-child(4n){
+  background-color: #4268b1;
+}
+
+.asset-list>div:nth-child(4n-2), .asset-list>div:nth-child(4n-3){
+  background-color: #3f62a4;
+}
+
+.asset-list>div:first-child{
+  position: static;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #5586e2;
+  width: 100vh;
+  height: 18rem;
+  padding: 3rem;
+  gap: 2rem;
+}
+
+.asset-list>div:first-child h1 {
+  position: static;
+  font-size: 7rem;
+}
+
+.asset-list>div:first-child .basic-detail {
+  position: static;
+  font-size: 1rem;
+  align-self: center;
+}

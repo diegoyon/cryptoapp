@@ -1,25 +1,29 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Asset from '../components/Asset';
+import './Home.css';
 
 function Home() {
-  const assets = useSelector((state) => state.assets.assets)
-  const status = useSelector((state) => state.assets.status)
+  const assets = useSelector((state) => state.assets.assets);
+  const status = useSelector((state) => state.assets.status);
 
   let content;
-  if(status === 'loading'){
-    content = <p>Loading</p>
+  if (status === 'loading') {
+    content = <p>Loading</p>;
   }
-  if (status === 'succeeded'){
+  if (status === 'succeeded') {
     content = assets.map((asset) => (
-      <div key={asset.id}>
-        <p>{asset.id}</p>
-        <p>{asset.rank}</p>
-      </div>
-    ))
+      <Asset
+        key={asset.id}
+        symbol={asset.symbol}
+        name={asset.name}
+        priceUsd={asset.priceUsd}
+      />
+    ));
   }
 
   return (
-    <div>{content}</div>
+    <div className="asset-list">{content}</div>
   );
 }
 

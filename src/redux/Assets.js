@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -9,8 +10,8 @@ export const fetchAssets = createAsyncThunk(
     const response = await axios.get(ASSETS_URL);
     // console.log(response.data.data);
     return response.data.data;
-  }
-)
+  },
+);
 
 export const assets = createSlice({
   name: 'assets',
@@ -22,14 +23,14 @@ export const assets = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(fetchAssets.pending, (state, action) => {
+      .addCase(fetchAssets.pending, (state) => {
         state.status = 'loading';
       })
       .addCase(fetchAssets.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.assets = action.payload;
-      })
-  }
-})
+      });
+  },
+});
 
 export default assets.reducer;

@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import logger from "redux-logger";
+import { configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
 import assetsReducer from './Assets';
 
 const store = configureStore({
@@ -7,6 +7,6 @@ const store = configureStore({
     assets: assetsReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-})
+});
 
 export default store;
