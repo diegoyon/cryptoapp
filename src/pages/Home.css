@@ -18,9 +18,7 @@ a {
 .asset-list {
   display: flex;
   flex-wrap: wrap;
-  /* border: 1px solid blue; */
   justify-content: center;
-  /* gap: 10px; */
 }
 
 .asset-list>a:nth-child(4n-1), .asset-list>a:nth-child(4n){

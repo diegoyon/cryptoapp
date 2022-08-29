@@ -1,0 +1,88 @@
+.title {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  height: 20rem;
+  overflow: hidden;
+  padding: 1rem;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(85,136,227) 100%);
+}
+
+.title h1 {
+  color: black;
+  position: absolute;
+  left: 4.5rem;
+  top: 2.5rem;
+  font-size: 20rem;
+  letter-spacing: -1rem;
+}
+
+.title-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+.title h2 {
+  margin-bottom: 1rem;
+}
+
+.title h3 {
+  font-size: 3rem;
+}
+
+.stats {
+  background-color: #35548b;
+  color: white;
+  padding: 0.3rem;
+  font-weight: 600;
+}
+
+.rows>div:nth-child(2n-1){
+  background-color: #4369b2;
+}
+
+.rows>div:nth-child(2n){
+  background-color: #3f62a4;
+}
+
+.rows {
+  color: white;
+}
+
+.first-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.second-row, .third-row, .fourth-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+}
+
+.first-row p:nth-child(1), .second-row p:nth-child(1), .third-row p:nth-child(1), .fourth-row p:nth-child(1){
+  font-size: 0.8rem;
+}
+
+.first-row p:nth-child(2), .second-row p:nth-child(2), .third-row p:nth-child(2), .fourth-row p:nth-child(2){
+  font-size: 1.2rem;
+}
+
+.fourth-row img {
+  height: 2.5rem;
+}
+
+.fourth-row p:nth-child(1){
+  width: 50vw;
+  /* border: 1px solid red; */
+}
+
+.fourth-row a {
+  /* border: 1px solid red; */
+}

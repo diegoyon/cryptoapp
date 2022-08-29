@@ -6,7 +6,10 @@ function Asset(props) {
   const { symbol, name, priceUsd } = props;
   let price;
   if (priceUsd > 10) {
-    price = parseFloat(Number(parseFloat(priceUsd).toFixed(2))).toLocaleString('en-US');
+    price = parseFloat(priceUsd).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
   } else {
     price = Number(parseFloat(priceUsd).toFixed(5));
   }
