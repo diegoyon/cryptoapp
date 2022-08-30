@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Asset from '../components/Asset';
 import './Home.css';
+import mic from '../img/mic.png';
+import settings from '../img/settings.png';
 
 function Home() {
   const assets = useSelector((state) => state.assets.assets);
@@ -28,6 +30,10 @@ function Home() {
     <>
       <header>
         <h1>top rated</h1>
+        <div className="images">
+          <img src={mic} alt="microphone" />
+          <img src={settings} alt="settings" />
+        </div>
       </header>
       <div className="asset-list">{content}</div>
     </>

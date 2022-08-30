@@ -65,7 +65,7 @@
   padding: 1.5rem 2rem;
 }
 
-.first-row p:nth-child(1), .second-row p:nth-child(1), .third-row p:nth-child(1), .fourth-row p:nth-child(1){
+.first-row p:nth-child(1), .second-row p:nth-child(1), .third-row> div > p:nth-child(1), .fourth-row p:nth-child(1){
   font-size: 0.8rem;
 }
 
@@ -77,7 +77,7 @@
   height: 2.5rem;
 }
 
-.second-row p:nth-child(1),.third-row p:nth-child(1),.fourth-row p:nth-child(1){
+.second-row p:nth-child(1),.third-row > div > p:nth-child(1),.fourth-row p:nth-child(1){
   width: 50vw;
 }
 
@@ -102,4 +102,30 @@
 
 .chart {
   padding: 0.5rem 1rem;
+}
+
+.change-percentage {
+  display: flex;
+  align-items: center;
+}
+
+.change-percentage p {
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
+}
+
+.change-percentage img {
+  height: 1rem;
+}
+
+header img {
+  height: 2rem;
+  vertical-align: middle;
+}
+
+header h2 {
+  color: white;
+  font-weight: 300;
+  margin-right: 50vw;
+  transform: translateX(50%);
 }

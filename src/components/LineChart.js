@@ -11,7 +11,6 @@ import {
   Title,
   Tooltip,
   Legend,
-  Filler,
 } from 'chart.js';
 
 ChartJS.register(
@@ -22,7 +21,6 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  Filler,
 );
 
 function LineChart({ chartData }) {
@@ -31,11 +29,10 @@ function LineChart({ chartData }) {
       data={chartData}
       options={{
         responsive: true,
-
         plugins: {
           title: {
             display: true,
-            text: 'Price Action (Last 30 days)',
+            text: 'Price (Last 30 days)',
             color: 'white',
           },
           legend: {

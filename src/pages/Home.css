@@ -1,6 +1,7 @@
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   background-color: #4369b2;
   padding: 0.5rem;
 }
@@ -8,6 +9,8 @@ header {
 header h1 {
   color: white;
   font-weight: 300;
+  margin-left: 50vw;
+  transform: translateX(-50%);
 }
 
 a {
@@ -50,4 +53,13 @@ a {
   position: static;
   font-size: 1rem;
   align-self: center;
+}
+
+.images {
+  display: flex;
+  gap: 1rem;
+}
+
+.images img {
+  height: 2rem;
 }

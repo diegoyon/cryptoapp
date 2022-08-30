@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAssetHistory } from '../redux/Assets';
 import LineChart from '../components/LineChart';
 import './Details.css';
 import globe from '../img/globe.jpg';
+import greenArrow from '../img/green-arrow.png';
+import redArrow from '../img/red-arrow.png';
+import backArrow from '../img/back.png';
 
 function Details() {
   const params = useParams();
@@ -41,17 +44,17 @@ function Details() {
 
   let assetData;
   let content;
-  if (status === 'succeeded') {
+  if (status === 'loading') {
+    content = 'Loading...';
+  } else if (status === 'succeeded') {
     assetData = {
       labels: assetHistory.map((data) => data.date.substring(0, 10)),
       datasets: [
         {
           label: `${asset.name} History`,
           data: assetHistory.map((data) => data.priceUsd),
-          // fill: true,
           backgroundColor: 'white',
           borderColor: 'white',
-          // tension: 0.4,
         },
       ],
     };
@@ -60,10 +63,12 @@ function Details() {
 
   return (
     <>
-      <p>
-        {asset.name}
-        -stats
-      </p>
+      <header>
+        <Link to="/">
+          <img src={backArrow} alt="back-arrow" />
+        </Link>
+        <h2>{asset.name}</h2>
+      </header>
       <div className="title">
         <h1>{asset.symbol}</h1>
         <div className="title-details">
@@ -104,10 +109,13 @@ function Details() {
           </div>
           <div>
             <p>CHANGE PERCENTAGE (Last 24 hours)</p>
-            <p className={isPositive(asset.changePercent24Hr) ? 'green' : 'red'}>
-              {formatNumber(asset.changePercent24Hr)}
-              %
-            </p>
+            <div className="change-percentage">
+              <p className={isPositive(asset.changePercent24Hr) ? 'green' : 'red'}>
+                {formatNumber(asset.changePercent24Hr)}
+                %
+              </p>
+              <img src={isPositive(asset.changePercent24Hr) ? greenArrow : redArrow} alt="arrow" />
+            </div>
           </div>
         </div>
         <div className="fourth-row">
