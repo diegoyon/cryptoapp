@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAssetHistory } from '../redux/Assets';
+import LineChart from '../components/LineChart';
 import './Details.css';
 import globe from '../img/globe.jpg';
 
 function Details() {
   const params = useParams();
   const assets = useSelector((state) => state.assets.assets);
+  const assetHistory = useSelector((state) => state.assets.assetHistory);
+  const status = useSelector((state) => state.assets.status);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAssetHistory(params.id));
+  }, []);
 
   const assetArray = assets.filter((asset) => asset.id === params.id);
   const asset = assetArray[0];
@@ -21,6 +30,32 @@ function Details() {
     price = formatNumber(asset.priceUsd);
   } else {
     price = Number(parseFloat(asset.priceUsd).toFixed(5));
+  }
+
+  const isPositive = (num) => {
+    if (num > 0) {
+      return true;
+    }
+    return false;
+  };
+
+  let assetData;
+  let content;
+  if (status === 'succeeded') {
+    assetData = {
+      labels: assetHistory.map((data) => data.date.substring(0, 10)),
+      datasets: [
+        {
+          label: `${asset.name} History`,
+          data: assetHistory.map((data) => data.priceUsd),
+          // fill: true,
+          backgroundColor: 'white',
+          borderColor: 'white',
+          // tension: 0.4,
+        },
+      ],
+    };
+    content = <LineChart chartData={assetData} />;
   }
 
   return (
@@ -69,7 +104,7 @@ function Details() {
           </div>
           <div>
             <p>CHANGE PERCENTAGE (Last 24 hours)</p>
-            <p>
+            <p className={isPositive(asset.changePercent24Hr) ? 'green' : 'red'}>
               {formatNumber(asset.changePercent24Hr)}
               %
             </p>
@@ -81,11 +116,13 @@ function Details() {
             <p>{formatNumber(asset.vwap24Hr)}</p>
           </div>
           <div>
+            <p>EXPLORE</p>
             <a href={asset.explorer}>
               <img src={globe} alt="globe" />
             </a>
           </div>
         </div>
+        <div className="chart">{content}</div>
       </div>
     </>
   );

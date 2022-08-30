@@ -12,10 +12,19 @@ export const fetchAssets = createAsyncThunk(
   },
 );
 
+export const getAssetHistory = createAsyncThunk(
+  'assets/getAssetHistory',
+  async (asset) => {
+    const response = await axios.get(`${ASSETS_URL}/${asset}/history?interval=d1`);
+    return response.data.data.slice(-30);
+  },
+);
+
 export const assets = createSlice({
   name: 'assets',
   initialState: {
     assets: [],
+    assetHistory: [],
     status: 'idle',
     error: null,
   },
@@ -28,6 +37,13 @@ export const assets = createSlice({
       .addCase(fetchAssets.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.assets = action.payload;
+      })
+      .addCase(getAssetHistory.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(getAssetHistory.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.assetHistory = action.payload;
       });
   },
 });

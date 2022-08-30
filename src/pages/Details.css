@@ -62,8 +62,7 @@
 
 .second-row, .third-row, .fourth-row {
   display: flex;
-  justify-content: space-around;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
 }
 
 .first-row p:nth-child(1), .second-row p:nth-child(1), .third-row p:nth-child(1), .fourth-row p:nth-child(1){
@@ -78,11 +77,29 @@
   height: 2.5rem;
 }
 
-.fourth-row p:nth-child(1){
+.second-row p:nth-child(1),.third-row p:nth-child(1),.fourth-row p:nth-child(1){
   width: 50vw;
-  /* border: 1px solid red; */
 }
 
-.fourth-row a {
-  /* border: 1px solid red; */
+.fourth-row > div:nth-child(2) {
+  display: flex;
+  max-width: 200px;
+  align-items: center;
+}
+
+.fourth-row > div:nth-child(2) p {
+  width: fit-content;
+  margin-right: 1rem;
+}
+
+.green {
+  color: rgb(0, 255, 0);
+}
+
+.red {
+  color: rgb(255, 0, 0);
+}
+
+.chart {
+  padding: 0.5rem 1rem;
 }
