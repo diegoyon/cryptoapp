@@ -28,7 +28,25 @@ export const assets = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {},
+  reducers: {
+    sortTopRanked(state) {
+      state.assets = state.assets.sort((a, b) => parseFloat(a.rank) - parseFloat(b.rank));
+    },
+    sortHighPrice(state) {
+      state.assets = state.assets.sort((a, b) => parseFloat(b.priceUsd) - parseFloat(a.priceUsd));
+    },
+    sortLowPrice(state) {
+      state.assets = state.assets.sort((a, b) => parseFloat(a.priceUsd) - parseFloat(b.priceUsd));
+    },
+    sortGainers(state) {
+      state.assets = state.assets.sort((a, b) => parseFloat(b.changePercent24Hr)
+        - parseFloat(a.changePercent24Hr));
+    },
+    sortLosers(state) {
+      state.assets = state.assets.sort((a, b) => parseFloat(a.changePercent24Hr)
+        - parseFloat(b.changePercent24Hr));
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchAssets.pending, (state) => {
@@ -47,5 +65,13 @@ export const assets = createSlice({
       });
   },
 });
+
+export const {
+  sortTopRanked,
+  sortHighPrice,
+  sortLowPrice,
+  sortGainers,
+  sortLosers,
+} = assets.actions;
 
 export default assets.reducer;
