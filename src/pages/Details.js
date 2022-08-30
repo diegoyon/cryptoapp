@@ -108,7 +108,7 @@ function Details() {
             <p>{formatNumber(asset.volumeUsd24Hr)}</p>
           </div>
           <div>
-            <p>CHANGE PERCENTAGE (Last 24 hours)</p>
+            <p>PERCENTAGE CHANGE (Last 24 hours)</p>
             <div className="change-percentage">
               <p className={isPositive(asset.changePercent24Hr) ? 'green' : 'red'}>
                 {formatNumber(asset.changePercent24Hr)}
