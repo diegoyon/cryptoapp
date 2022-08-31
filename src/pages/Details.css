@@ -1,0 +1,144 @@
+.title {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  height: 20rem;
+  overflow: hidden;
+  padding: 1rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(85, 136, 227) 100%);
+}
+
+.title h1 {
+  color: black;
+  position: absolute;
+  left: 4.5rem;
+  top: 2.5rem;
+  font-size: 20rem;
+  letter-spacing: -1rem;
+}
+
+.title-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+header h2 {
+  color: white;
+  font-weight: 300;
+  margin-right: 50vw;
+  transform: translateX(50%);
+}
+
+.title h2 {
+  margin-bottom: 1rem;
+}
+
+.title h3 {
+  font-size: 3rem;
+}
+
+.stats {
+  background-color: #35548b;
+  color: white;
+  padding: 0.3rem;
+  font-weight: 600;
+}
+
+.rows > div:nth-child(2n-1) {
+  background-color: #4369b2;
+}
+
+.rows > div:nth-child(2n) {
+  background-color: #3f62a4;
+}
+
+.rows {
+  color: white;
+}
+
+.first-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.second-row,
+.third-row,
+.fourth-row {
+  display: flex;
+  padding: 1.5rem 2rem;
+}
+
+.change-percentage p {
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
+}
+
+.first-row p:nth-child(2),
+.second-row p:nth-child(2),
+.third-row p:nth-child(2),
+.fourth-row p:nth-child(2) {
+  font-size: 1.2rem;
+}
+
+.second-row p:nth-child(1),
+.fourth-row p:nth-child(1) {
+  width: 50vw;
+}
+
+.first-row p:nth-child(1),
+.second-row p:nth-child(1),
+.fourth-row p:nth-child(1),
+.third-row > div > p:nth-child(1) {
+  font-size: 0.8rem;
+}
+
+.third-row > div > p:nth-child(1) {
+  width: 50vw;
+}
+
+header img {
+  height: 2rem;
+  vertical-align: middle;
+}
+
+.fourth-row img {
+  height: 2.5rem;
+}
+
+.fourth-row > div:nth-child(2) {
+  display: flex;
+  max-width: 200px;
+  align-items: center;
+}
+
+.fourth-row > div:nth-child(2) p {
+  width: fit-content;
+  margin-right: 1rem;
+}
+
+.green {
+  color: rgb(0, 255, 0);
+}
+
+.red {
+  color: rgb(255, 0, 0);
+}
+
+.chart {
+  padding: 0.5rem 1rem;
+}
+
+.change-percentage {
+  display: flex;
+  align-items: center;
+}
+
+.change-percentage img {
+  height: 1rem;
+}

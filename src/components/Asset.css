@@ -1,0 +1,30 @@
+.asset {
+  display: flex;
+  position: relative;
+  height: 8rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.asset h1 {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  align-self: center;
+  color: #2d4573;
+  font-size: 3.5rem;
+}
+
+.basic-detail {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: white;
+  z-index: 2;
+}
+
+.basic-detail h2 {
+  font-size: 1.3rem;
+}
