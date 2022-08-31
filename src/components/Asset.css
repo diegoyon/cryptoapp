@@ -1,9 +1,6 @@
 .asset {
   display: flex;
   position: relative;
-  /* border: 1px solid red; */
-  /* outline: 1px solid red; */
-  width: 50vw;
   height: 8rem;
   flex-direction: column;
   justify-content: flex-end;

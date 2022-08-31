@@ -18,13 +18,12 @@ header select {
 
 a {
   text-decoration: none;
+  flex: 50%;
 }
-
 
 .asset-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .asset-list>a:nth-child(4n-1), .asset-list>a:nth-child(4n){
