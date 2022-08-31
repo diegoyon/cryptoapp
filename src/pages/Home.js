@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Asset from '../components/Asset';
@@ -16,8 +16,9 @@ import {
 function Home() {
   const assets = useSelector((state) => state.assets.assets);
   const status = useSelector((state) => state.assets.status);
+  const filter = useSelector((state) => state.assets.filter);
   const dispatch = useDispatch();
-  const [filter, setFilter] = useState('low-price');
+
   let content;
   if (status === 'loading') {
     content = <p>Loading</p>;
@@ -35,7 +36,6 @@ function Home() {
   }
 
   const handleChange = (e) => {
-    setFilter(e.target.value);
     switch (e.target.value) {
       case 'top-ranked':
         dispatch(sortTopRanked());
