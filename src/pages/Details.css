@@ -6,8 +6,8 @@
   height: 20rem;
   overflow: hidden;
   padding: 1rem;
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(85,136,227) 100%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(85, 136, 227) 100%);
 }
 
 .title h1 {
@@ -26,6 +26,13 @@
   z-index: 1;
 }
 
+header h2 {
+  color: white;
+  font-weight: 300;
+  margin-right: 50vw;
+  transform: translateX(50%);
+}
+
 .title h2 {
   margin-bottom: 1rem;
 }
@@ -41,11 +48,11 @@
   font-weight: 600;
 }
 
-.rows>div:nth-child(2n-1){
+.rows > div:nth-child(2n-1) {
   background-color: #4369b2;
 }
 
-.rows>div:nth-child(2n){
+.rows > div:nth-child(2n) {
   background-color: #3f62a4;
 }
 
@@ -60,25 +67,48 @@
   padding: 1.5rem;
 }
 
-.second-row, .third-row, .fourth-row {
+.second-row,
+.third-row,
+.fourth-row {
   display: flex;
   padding: 1.5rem 2rem;
 }
 
-.first-row p:nth-child(1), .second-row p:nth-child(1), .third-row> div > p:nth-child(1), .fourth-row p:nth-child(1){
+.change-percentage p {
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
+}
+
+.first-row p:nth-child(2),
+.second-row p:nth-child(2),
+.third-row p:nth-child(2),
+.fourth-row p:nth-child(2) {
+  font-size: 1.2rem;
+}
+
+.second-row p:nth-child(1),
+.fourth-row p:nth-child(1) {
+  width: 50vw;
+}
+
+.first-row p:nth-child(1),
+.second-row p:nth-child(1),
+.fourth-row p:nth-child(1),
+.third-row > div > p:nth-child(1) {
   font-size: 0.8rem;
 }
 
-.first-row p:nth-child(2), .second-row p:nth-child(2), .third-row p:nth-child(2), .fourth-row p:nth-child(2){
-  font-size: 1.2rem;
+.third-row > div > p:nth-child(1) {
+  width: 50vw;
+}
+
+header img {
+  height: 2rem;
+  vertical-align: middle;
 }
 
 .fourth-row img {
   height: 2.5rem;
-}
-
-.second-row p:nth-child(1),.third-row > div > p:nth-child(1),.fourth-row p:nth-child(1){
-  width: 50vw;
 }
 
 .fourth-row > div:nth-child(2) {
@@ -109,23 +139,6 @@
   align-items: center;
 }
 
-.change-percentage p {
-  font-size: 1.2rem;
-  margin-right: 0.2rem;
-}
-
 .change-percentage img {
   height: 1rem;
-}
-
-header img {
-  height: 2rem;
-  vertical-align: middle;
-}
-
-header h2 {
-  color: white;
-  font-weight: 300;
-  margin-right: 50vw;
-  transform: translateX(50%);
 }

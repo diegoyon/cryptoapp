@@ -29,32 +29,34 @@ a {
   flex: 50%;
 }
 
-.asset-list>a:nth-child(4n-1), .asset-list>a:nth-child(4n){
+.asset-list > a:nth-child(4n-1),
+.asset-list > a:nth-child(4n) {
   background-color: #4268b1;
 }
 
-.asset-list>a:nth-child(4n-2), .asset-list>a:nth-child(4n-3){
+.asset-list > a:nth-child(4n-2),
+.asset-list > a:nth-child(4n-3) {
   background-color: #3f62a4;
 }
 
-.asset-list>a:first-child .asset{
+.asset-list > a:first-child .asset {
   position: static;
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: #5586e2;
-  width: 100vW;
+  width: 100vw;
   height: 18rem;
   padding: 3rem;
   gap: 2rem;
 }
 
-.asset-list>a:first-child .asset h1 {
+.asset-list > a:first-child .asset h1 {
   position: static;
   font-size: 7rem;
 }
 
-.asset-list>a:first-child .asset .basic-detail {
+.asset-list > a:first-child .asset .basic-detail {
   position: static;
   font-size: 1rem;
   align-self: center;
