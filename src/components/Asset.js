@@ -15,9 +15,9 @@ function Asset(props) {
   }
   return (
     <div className="asset">
-      <h1>{symbol}</h1>
+      <h1 data-testid="symbol">{symbol}</h1>
       <div className="basic-detail">
-        <h2>{name.toUpperCase()}</h2>
+        <h2 data-testid="name">{name.toUpperCase()}</h2>
         <p>
           $
           {price}

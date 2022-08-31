@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Asset renders correctly 1`] = `
+<div
+  className="asset"
+>
+  <h1
+    data-testid="symbol"
+  >
+    BTC
+  </h1>
+  <div
+    className="basic-detail"
+  >
+    <h2
+      data-testid="name"
+    >
+      BITCOIN
+    </h2>
+    <p>
+      $
+      20,000.00
+    </p>
+  </div>
+</div>
+`;
