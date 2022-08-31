@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[CryptoApp](https://diegoyon.github.io/bookstore/)
+[CryptoApp](https://diegoyon-crytoapp.netlify.app/)
 
 ## Getting Started
 
@@ -47,3 +47,7 @@ Give a ⭐️ if you like this project!
 - Nelson Sakwa on Behance
 - Creative Commons
 - CoinCap API 2.0
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
