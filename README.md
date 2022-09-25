@@ -21,7 +21,7 @@ To obtain a local copy of the project follow this steps:
 - Type the following `git@github.com:diegoyon/cryptoapp.git` if you are using a SSH key.
 - Press ENTER to create your local clone.
 - Install dependencies with `npm install`.
-- Start the SPA by typing `npm start`
+- Start the SPA by typing `npm start`.
 
 ## Author
 
