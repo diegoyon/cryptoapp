@@ -2,7 +2,7 @@
 
 # CryptoApp
 
-> The CrytoApp is a single page application that consumes an API that contains updated information about cryptocurrencies data. Currencies displayed can be filtered by ranking, price or percentage change. It also shows more detail information about each crytocurrency including a graph showing the price movement.
+> A single-page application that consumes an API that contains updated information about cryptocurrency data. Currencies displayed can be filtered by ranking, price, or percentage change. It also shows more detailed information about each cryptocurrency including a graph showing the price movement.
 
 ## Built With
 
